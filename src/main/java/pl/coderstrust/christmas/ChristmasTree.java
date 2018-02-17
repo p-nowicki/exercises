@@ -1,4 +1,4 @@
-package pl.coderstrust.christmastree;
+package pl.coderstrust.christmas;
 
 import java.util.Scanner;
 

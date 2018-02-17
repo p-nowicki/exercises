@@ -1,4 +1,4 @@
-gi *.iml
+*.iml
 .idea
 
 # Compiled class file

@@ -1,4 +1,4 @@
-package pl.coderstrust.multiplicationtable;
+package pl.coderstrust.multiplication;
 
 import java.util.Scanner;
 

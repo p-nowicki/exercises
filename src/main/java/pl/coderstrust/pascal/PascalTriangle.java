@@ -1,4 +1,4 @@
-package pl.coderstrust.pascaltriangle;
+package pl.coderstrust.pascal;
 
 import java.util.Scanner;
 

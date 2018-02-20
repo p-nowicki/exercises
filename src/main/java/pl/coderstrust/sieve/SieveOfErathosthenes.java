@@ -8,8 +8,14 @@ public class SieveOfErathosthenes {
     public int[] sieveOfErathostenes(int n) {
         boolean prime [] = new  boolean[n + 1];
 
-        for (int i = 0; i < n; ++i)
+        return printSieve(n, prime);
+
+    }
+
+    public int[] printSieve(int n, boolean[] prime) {
+        for (int i = 0; i < n; ++i) {
             prime[i] = true;
+        }
 
         for (int j = 2; j * j <= n; ++j) {
             if(prime[j]) {
@@ -34,8 +40,7 @@ public class SieveOfErathosthenes {
         }
 
         System.out.print(Arrays.toString(primes));
-        return(primes);
-
+        return primes;
     }
 
     public static void main(String[] args) {

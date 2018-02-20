@@ -1,11 +1,11 @@
 package pl.coderstrust.sieve;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class SieveOfErathosthenes {
 
-    private void sieveOfErath(int n) {
-
+    public int[] sieveOfErathostenes(int n) {
         boolean prime [] = new  boolean[n + 1];
 
         for (int i = 0; i < n; ++i)
@@ -18,11 +18,23 @@ public class SieveOfErathosthenes {
             }
         }
 
+        int numberOfPrimes = 0;
         for (int l = 2; l <= n; ++l) {
-            if(prime[l]) {
-                System.out.print(l + " ");
+            if (prime [l]) {
+                ++numberOfPrimes;
             }
         }
+
+        int primes [] = new int[numberOfPrimes];
+        int index = 0;
+        for (int m = 2; m <= n; ++m) {
+            if (prime[m]) {
+                primes [index++] = m;
+            }
+        }
+
+        System.out.print(Arrays.toString(primes));
+        return(primes);
 
     }
 
@@ -33,9 +45,7 @@ public class SieveOfErathosthenes {
 
         System.out.print("The prime numbers smaller or equal to " + n + " are: ");
         SieveOfErathosthenes sieve = new SieveOfErathosthenes();
-        sieve.sieveOfErath(n);
-
-
+        sieve.sieveOfErathostenes(n);
 
     }
 

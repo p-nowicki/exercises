@@ -26,8 +26,10 @@ public class FooBarTest {
 
     @Test
     @Parameters({"99, 99 Foo",
-            "100, 100 Bar"})
-    public void shouldReturn99For99(int i, String expected) {
+            "444, 444 Foo",
+            "320, 320 Bar",
+            "3880920, 3880920 FooBar"})
+    public void shouldReturnExpectedValueForInput(int i, String expected) {
         //given
 
         //when

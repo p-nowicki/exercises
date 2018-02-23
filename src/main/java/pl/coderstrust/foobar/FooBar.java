@@ -6,7 +6,7 @@ public class FooBar {
     }
 
     public static void fooBarLoop() {
-        for (int i = 0; i <= 100; ++i) {
+        for (int i = 0; i <= 52178645; ++i) {
             System.out.println(fooBarImplementation(i));
         }
     }

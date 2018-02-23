@@ -1,20 +1,13 @@
 package pl.coderstrust.christmas;
 
-import java.util.Scanner;
-
 public class ChristmasTree {
 
     public static void main(String[] args) {
-
-        xmasTree();
+        xmasTree(5);
 
     }
 
-    private static void xmasTree() {
-
-        Scanner sc = new Scanner(System.in);
-        int height = sc.nextInt();
-
+    public static void xmasTree(int height) {
         for (int i = 0; i < height; ++i) {
             for (int j = 0; j < height - i; ++j) {
                 System.out.print(" ");

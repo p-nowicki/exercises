@@ -1,3 +1,4 @@
+/*
 package pl.coderstrust.christmas;
 
 import org.junit.Test;
@@ -21,4 +22,17 @@ public class ChristmasTreeTest {
         assertThat(result, is(expected));
     }
 
-}
+    @Test
+    public void shouldRetrn1For1() {
+        //given
+        int count = 5;
+        String expected = " * ";
+
+        //when
+        String result = xmasTree(count);
+
+        //then
+        assertThat(result, is(expected));
+    }
+
+}*/

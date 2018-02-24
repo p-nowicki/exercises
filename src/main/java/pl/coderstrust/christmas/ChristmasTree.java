@@ -3,7 +3,8 @@ package pl.coderstrust.christmas;
 public class ChristmasTree {
 
     public static void main(String[] args) {
-        xmasTree(5);
+        xmasTree(5
+        );
 
     }
 

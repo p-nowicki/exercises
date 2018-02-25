@@ -2,16 +2,14 @@ package pl.coderstrust.pascal;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
-public class PascalTriangle
-{
-    public static void main(String args[])
-    {
-        pascalPrint();
+public class PascalTriangle {
+    public static void main(String args[]) {
+        pascalPrint(5);
     }
 
     public List<String> pascalTriangle;
+
     public PascalTriangle() {
         pascalTriangle = new ArrayList<String>();
         pascalTriangle = new ArrayList<String>();
@@ -26,22 +24,16 @@ public class PascalTriangle
         return pascalTriangle;
     }
 
-    public static void pascalPrint() {
-        int r, i, k, number, j;
-        Scanner sc = new Scanner(System.in);
+    public static void pascalPrint(int r) {
+        System.out.print("Number of rows: " + r);
+        System.out.println();
 
-        System.out.print("Number of rows: ");
-        r = sc.nextInt();
-
-        for (i = 0; i < r; ++i)
-        {
-            for(k = r; k > i; --k)
-            {
+        for (int i = 0; i < r; ++i) {
+            for (int k = r; k > i; --k) {
                 System.out.print(" ");
             }
-            number = 1;
-            for(j = 0; j <= i; ++j)
-            {
+            int number = 1;
+            for (int j = 0; j <= i; ++j) {
                 System.out.print(number + " ");
                 number = number * (i - j) / (j + 1);
             }

@@ -1,25 +1,32 @@
 package pl.coderstrust.christmas;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class ChristmasTree {
 
     public static void main(String[] args) {
-        List<String> christmasTree = new ArrayList<>();
-       //xmasTree();
 
+        xMasTree();
+
+    }
+
+    public List<String> christmasTree;
+    public ChristmasTree() {
+        christmasTree = new ArrayList<String>();
         christmasTree.add("     *");
         christmasTree.add("    ***");
         christmasTree.add("   *****");
         christmasTree.add("  *******");
         christmasTree.add(" *********");
         christmasTree.add("    ***");
-        System.out.println();
+    }
+    public List<String> getChristmasTree() {
+        return christmasTree;
     }
 
-    public static void xmasTree() {
+
+    public static void xMasTree() {
         int height = 5;
 
         for (int i = 0; i < height; ++i) {
@@ -39,7 +46,7 @@ public class ChristmasTree {
                 System.out.print(" ");
             }
         }
-   }
+    }
 }
 
 

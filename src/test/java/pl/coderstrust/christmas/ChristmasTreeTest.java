@@ -1,38 +1,64 @@
-/*
 package pl.coderstrust.christmas;
 
 import org.junit.Test;
 
+import java.util.Arrays;
+import java.util.List;
+
+import static org.hamcrest.CoreMatchers.hasItems;
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
-import static pl.coderstrust.christmas.ChristmasTree.xmasTree;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
 public class ChristmasTreeTest {
 
+    private ChristmasTree aBeautifulTree;
+
+
     @Test
-    public void shouldReturn1For1() {
+    public void shouldMakeExpectedEqualOurList() {
+
         //given
-        int count = 1;
-        String expected = " * ";
+        aBeautifulTree = new ChristmasTree();
+        List<String> christmasTree = aBeautifulTree.getChristmasTree();
 
         //when
-        String result = xmasTree(count);
+        List<String> actual = christmasTree;
+        List<String> expected = Arrays.asList("     *", "    ***", "   *****", "  *******", " *********", "    ***");
 
         //then
-        assertThat(result, is(expected));
+        assertEquals(expected, actual);
+
     }
 
     @Test
-    public void shouldRetrn1For1() {
+    public void shouldAssertListsSizeIsEqual() {
+
         //given
-        int count = 5;
-        String expected = " * ";
+        aBeautifulTree = new ChristmasTree();
+        List<String> christmasTree = aBeautifulTree.getChristmasTree();
 
         //when
-        String result = xmasTree(count);
+        List<String> actual = christmasTree;
+        List<String> expected = Arrays.asList("     *", "    ***", "   *****", "  *******", " *********", "    ***");
 
         //then
-        assertThat(result, is(expected));
+        assertThat(actual.size(), is(expected.size()));
     }
 
-}*/
+    @Test
+    public void shouldAssertListContainsGivenValue() {
+
+        //given
+        aBeautifulTree = new ChristmasTree();
+        List<String> christmasTree = aBeautifulTree.getChristmasTree();
+
+        //when
+        List<String> actual = christmasTree;
+//        List<String> expected = Arrays.asList("     *", "    ***", "   *****", "  *******", " *********", "    ***");
+
+        //then
+        assertThat(actual, hasItems("     *", " *********", "    ***"));
+    }
+
+}

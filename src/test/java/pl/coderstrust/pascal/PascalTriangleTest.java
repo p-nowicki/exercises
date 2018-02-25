@@ -54,7 +54,6 @@ public class PascalTriangleTest {
 
         //when
         List<String> actual = christmasTree;
-//        List<String> expected = Arrays.asList("     *", "    ***", "   *****", "  *******", " *********", "    ***");
 
         //then
         assertThat(actual, hasItems("    1 1 ", "  1 4 6 4 1 ", "    1 3 3 1 "));

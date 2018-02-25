@@ -19,10 +19,10 @@ public class PascalTriangleTest {
 
         //given
         trianglePascal = new PascalTriangle();
-        List<String> christmasTree = trianglePascal.getPascalTriangle();
+        List<String> pascalTriangle = trianglePascal.getPascalTriangle();
 
         //when
-        List<String> actual = christmasTree;
+        List<String> actual = pascalTriangle;
         List<String> expected = Arrays.asList("     1 ", "    1 1 ", "   1 2 1 ", "    1 3 3 1 ", "  1 4 6 4 1 ");
 
         //then
@@ -35,10 +35,10 @@ public class PascalTriangleTest {
 
         //given
         trianglePascal = new PascalTriangle();
-        List<String> christmasTree = trianglePascal.getPascalTriangle();
+        List<String> pascalTriangle = trianglePascal.getPascalTriangle();
 
         //when
-        List<String> actual = christmasTree;
+        List<String> actual = pascalTriangle;
         List<String> expected = Arrays.asList("     1 ", "    1 1 ", "   1 2 1 ", "    1 3 3 1 ", "  1 4 6 4 1 ");
 
         //then
@@ -50,10 +50,10 @@ public class PascalTriangleTest {
 
         //given
         trianglePascal = new PascalTriangle();
-        List<String> christmasTree = trianglePascal.getPascalTriangle();
+        List<String> pascalTriangle = trianglePascal.getPascalTriangle();
 
         //when
-        List<String> actual = christmasTree;
+        List<String> actual = pascalTriangle;
 
         //then
         assertThat(actual, hasItems("    1 1 ", "  1 4 6 4 1 ", "    1 3 3 1 "));

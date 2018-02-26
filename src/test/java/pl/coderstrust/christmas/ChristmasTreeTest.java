@@ -24,7 +24,12 @@ public class ChristmasTreeTest {
 
         //when
         List<String> actual = xMasTree(height);
-        List<String> expected = Arrays.asList("     *", "    ***", "   *****", "  *******", " *********", "    ***");
+        List<String> expected = Arrays.asList("     *",
+                "    ***",
+                "   *****",
+                "  *******",
+                " *********",
+                "    ***");
 
         //then
         assertEquals(expected, actual);
@@ -39,7 +44,12 @@ public class ChristmasTreeTest {
 
         //when
         List<String> actual = xMasTree(height);
-        List<String> expected = Arrays.asList("     *", "    ***", "   *****", "  *******", " *********", "    ***");
+        List<String> expected = Arrays.asList("     *",
+                "    ***",
+                "   *****",
+                "  *******",
+                " *********",
+                "    ***");
 
         //then
         assertThat(actual.size(), is(expected.size()));

@@ -7,23 +7,23 @@ import java.util.List;
 
 import static org.hamcrest.CoreMatchers.hasItems;
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
+import static pl.coderstrust.christmas.ChristmasTree.xMasTree;
 
 public class ChristmasTreeTest {
 
-    private ChristmasTree aBeautifulTree;
+    // private ChristmasTree aBeautifulTree;
 
 
     @Test
     public void shouldMakeExpectedEqualOurList() {
 
         //given
-        aBeautifulTree = new ChristmasTree();
-        List<String> christmasTree = aBeautifulTree.getChristmasTree();
+        int height = 5;
 
         //when
-        List<String> actual = christmasTree;
+        List<String> actual = xMasTree(height);
         List<String> expected = Arrays.asList("     *", "    ***", "   *****", "  *******", " *********", "    ***");
 
         //then
@@ -35,11 +35,10 @@ public class ChristmasTreeTest {
     public void shouldAssertListsSizeIsEqual() {
 
         //given
-        aBeautifulTree = new ChristmasTree();
-        List<String> christmasTree = aBeautifulTree.getChristmasTree();
+        int height = 5;
 
         //when
-        List<String> actual = christmasTree;
+        List<String> actual = xMasTree(height);
         List<String> expected = Arrays.asList("     *", "    ***", "   *****", "  *******", " *********", "    ***");
 
         //then
@@ -50,15 +49,15 @@ public class ChristmasTreeTest {
     public void shouldAssertListContainsGivenValue() {
 
         //given
-        aBeautifulTree = new ChristmasTree();
-        List<String> christmasTree = aBeautifulTree.getChristmasTree();
+        int height = 5;
 
         //when
-        List<String> actual = christmasTree;
-//        List<String> expected = Arrays.asList("     *", "    ***", "   *****", "  *******", " *********", "    ***");
+        List<String> actual = xMasTree(height);
+//      List<String> expected = Arrays.asList("     *", "    ***", "   *****", "  *******", " *********", "    ***");
 
         //then
         assertThat(actual, hasItems("     *", " *********", "    ***"));
     }
+
 
 }

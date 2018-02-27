@@ -7,23 +7,21 @@ import java.util.List;
 
 import static org.hamcrest.CoreMatchers.hasItems;
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
+import static pl.coderstrust.pascal.PascalTriangle.pascalPrint;
 
 public class PascalTriangleTest {
-
-    private PascalTriangle trianglePascal;
 
     @Test
     public void shouldMakeExpectedEqualOurList() {
 
         //given
-        trianglePascal = new PascalTriangle();
-        List<String> pascalTriangle = trianglePascal.getPascalTriangle();
+        int rows = 5;
 
         //when
-        List<String> actual = pascalTriangle;
-        List<String> expected = Arrays.asList("     1 ", "    1 1 ", "   1 2 1 ", "    1 3 3 1 ", "  1 4 6 4 1 ");
+        List<String> actual = pascalPrint(rows);
+        List<String> expected = Arrays.asList("     1 ", "    1 1 ", "   1 2 1 ", "  1 3 3 1 ", " 1 4 6 4 1 ");
 
         //then
         assertEquals(expected, actual);
@@ -33,13 +31,13 @@ public class PascalTriangleTest {
     @Test
     public void shouldAssertListsSizeIsEqual() {
 
+
         //given
-        trianglePascal = new PascalTriangle();
-        List<String> pascalTriangle = trianglePascal.getPascalTriangle();
+        int rows = 5;
 
         //when
-        List<String> actual = pascalTriangle;
-        List<String> expected = Arrays.asList("     1 ", "    1 1 ", "   1 2 1 ", "    1 3 3 1 ", "  1 4 6 4 1 ");
+        List<String> actual = pascalPrint(rows);
+        List<String> expected = Arrays.asList("     1 ", "    1 1 ", "   1 2 1 ", "  1 3 3 1 ", " 1 4 6 4 1 ");
 
         //then
         assertThat(actual.size(), is(expected.size()));
@@ -49,14 +47,13 @@ public class PascalTriangleTest {
     public void shouldAssertListContainsGivenValue() {
 
         //given
-        trianglePascal = new PascalTriangle();
-        List<String> pascalTriangle = trianglePascal.getPascalTriangle();
+        int rows = 5;
 
         //when
-        List<String> actual = pascalTriangle;
+        List<String> actual = pascalPrint(rows);
 
         //then
-        assertThat(actual, hasItems("    1 1 ", "  1 4 6 4 1 ", "    1 3 3 1 "));
+        assertThat(actual, hasItems("   1 2 1 ", "    1 1 ", " 1 4 6 4 1 "));
     }
 
 }

@@ -7,8 +7,9 @@ import java.util.List;
 
 import static org.hamcrest.CoreMatchers.hasItems;
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
+import static pl.coderstrust.multiplication.MultiplicationTable.multiTable;
 
 public class MultiplicationTableTest {
 
@@ -18,11 +19,10 @@ public class MultiplicationTableTest {
     public void shouldMakeExpectedEqualOurList() {
 
         //given
-        tableMultiplication = new MultiplicationTable();
-        List<String> multiplicationTable = tableMultiplication.getMultiplicationTable();
+        int numberByNumber = 10;
 
         //when
-        List<String> actual = multiplicationTable;
+        List<String> actual = multiTable(numberByNumber);
         List<String> expected = Arrays.asList("       1   2   3   4   5   6   7   8   9  10",
                 "   1   1   2   3   4   5   6   7   8   9  10",
                 "   2   2   4   6   8  10  12  14  16  18  20",
@@ -41,14 +41,29 @@ public class MultiplicationTableTest {
     }
 
     @Test
+    public void shouldAssertListContainsGivenValue() {
+
+        //given
+        int numberByNumber = 10;
+
+        //when
+        List<String> actual = multiTable(numberByNumber);
+
+        //then
+        assertThat(actual, hasItems("       1   2   3   4   5   6   7   8   9  10",
+                "   6   6  12  18  24  30  36  42  48  54  60",
+                "   9   9  18  27  36  45  54  63  72  81  90"));
+    }
+
+
+    @Test
     public void shouldAssertListsSizeIsEqual() {
 
         //given
-        tableMultiplication = new MultiplicationTable();
-        List<String> multiplicationTable = tableMultiplication.getMultiplicationTable();
+        int numberByNumber = 10;
 
         //when
-        List<String> actual = multiplicationTable;
+        List<String> actual = multiTable(numberByNumber);
         List<String> expected = Arrays.asList("       1   2   3   4   5   6   7   8   9  10",
                 "   1   1   2   3   4   5   6   7   8   9  10",
                 "   2   2   4   6   8  10  12  14  16  18  20",
@@ -64,22 +79,4 @@ public class MultiplicationTableTest {
         //then
         assertThat(actual.size(), is(expected.size()));
     }
-
-    @Test
-    public void shouldAssertListContainsGivenValue() {
-
-        //given
-        tableMultiplication = new MultiplicationTable();
-        List<String> multiplicationTable = tableMultiplication.getMultiplicationTable();
-
-        //when
-        List<String> actual = multiplicationTable;
-
-        //then
-        assertThat(actual, hasItems("       1   2   3   4   5   6   7   8   9  10",
-                "   6   6  12  18  24  30  36  42  48  54  60",
-                "   9   9  18  27  36  45  54  63  72  81  90"));
-    }
-
-
 }

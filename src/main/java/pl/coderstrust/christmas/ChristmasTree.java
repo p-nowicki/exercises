@@ -1,37 +1,46 @@
 package pl.coderstrust.christmas;
 
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ChristmasTree {
 
     public static void main(String[] args) {
 
-        xmasTree();
+        xMasTree(5);
 
     }
 
-    private static void xmasTree() {
+    public static List<String> xMasTree(int height) {
+        List<String> result = new ArrayList<>();
 
-        Scanner sc = new Scanner(System.in);
-        int height = sc.nextInt();
-
+        String line = "";
         for (int i = 0; i < height; ++i) {
             for (int j = 0; j < height - i; ++j) {
-                System.out.print(" ");
+                line += " ";
             }
             for (int j = 0; j <= i * 2; ++j) {
-                System.out.print("*");
+                line += "*";
+
             }
-            System.out.println();
+            result.add(line);
+            line = new String();
+
         }
 
+        String trunk = "";
         for (int j = 0; j <= height + 1; ++j) {
             if (j >= height - 1) {
-                System.out.print("*");
+                trunk += "*";
             } else {
-                System.out.print(" ");
+                trunk += " ";
             }
         }
+        result.add(trunk);
+        return result;
     }
 }
+
+
+
 

@@ -5,7 +5,8 @@ import java.util.List;
 
 public class PascalTriangle {
     public static void main(String args[]) {
-        pascalPrint(5);
+        System.out.println(pascalPrint(0));
+
 
     }
 

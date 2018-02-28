@@ -2,6 +2,7 @@ package pl.coderstrust.pascal;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -17,11 +18,11 @@ public class PascalTriangleTest {
     public void shouldMakeExpectedEqualOurList() {
 
         //given
-        int rows = 5;
+        int rows = 0;
 
         //when
         List<String> actual = pascalPrint(rows);
-        List<String> expected = Arrays.asList("     1 ", "    1 1 ", "   1 2 1 ", "  1 3 3 1 ", " 1 4 6 4 1 ");
+        List<String> expected = new ArrayList<>();
 
         //then
         assertEquals(expected, actual);

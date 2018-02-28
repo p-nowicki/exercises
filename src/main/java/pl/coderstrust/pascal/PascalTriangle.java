@@ -1,35 +1,31 @@
 package pl.coderstrust.pascal;
 
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
-public class PascalTriangle
-{
-    public static void main(String args[])
-    {
-        PascalPrint();
+public class PascalTriangle {
+    public static void main(String args[]) {
+        System.out.println(pascalPrint(0));
+
+
     }
 
-    private static void PascalPrint() {
-        int r, i, k, number, j;
-        Scanner sc = new Scanner(System.in);
+    public static List<String> pascalPrint(int rows) {
+        List<String> result = new ArrayList<>();
 
-        System.out.print("Number of rows: ");
-        r = sc.nextInt();
-
-        for (i = 0; i < r; ++i)
-        {
-            for(k = r; k > i; --k)
-            {
-                System.out.print(" ");
+        for (int i = 0; i < rows; ++i) {
+            String line = "";
+            for (int k = rows; k > i; --k) {
+                line += " ";
             }
-            number = 1;
-            for(j = 0; j <= i; ++j)
-            {
-                System.out.print(number + " ");
+            int number = 1;
+            for (int j = 0; j <= i; ++j) {
+                line += (number + " ");
                 number = number * (i - j) / (j + 1);
             }
-            System.out.println();
+            result.add(line);
         }
+        return result;
     }
 }
 

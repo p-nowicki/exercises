@@ -18,17 +18,18 @@ public class Processor {
 
         List<String> resultLines = new ArrayList<>();
         for (String line : linesFromFile) {
-            if (line.matches("")) {
-                resultLines.add(numbersProcessor.processLine(line));
+            if (line.matches("[\\d\\s]+")) {
+                System.out.println(line);
+                //numbersProcessor.processLine(line);
             }
         }
 
-        String abc = "";
+       /* String abc = "";
         abc += "def";
 
         StringBuilder builder = new StringBuilder();
         builder.append("abc").append("def");
-        builder.toString();
+        builder.toString();*/
 
         fileProcessor.writeLinesToFile(resultLines, resultFileName);
     }

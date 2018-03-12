@@ -14,6 +14,6 @@ public class Trapezoid implements Figure {
 
     @Override
     public double calculateArea() {
-        return (((parallelSideA + parallelSideB) * height) / 2);
+        return ((parallelSideA + parallelSideB) * height) / 2;
     }
 }

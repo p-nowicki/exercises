@@ -2,8 +2,8 @@ package pl.coderstrust.figures;
 
 public class Rectangle implements Figure {
 
-    private double sideA;
-    private double sideB;
+    public double sideA;
+    public double sideB;
 
     public Rectangle(double sideA, double sideB) {
         this.sideA = sideA;

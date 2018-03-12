@@ -9,22 +9,23 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 @RunWith(JUnitParamsRunner.class)
-public class CircleTest {
+public class TriangleTest {
 
     @Test
-    @Parameters({"5, 78.5",
-            "7, 153.86",
-            "14, 615.44",
-            "10, 314.0"})
-    public void shouldCalculateCircleArea(int radius, String expected) {
+    @Parameters({"5, 5, 12.5",
+            "14, 8, 56.0",
+            "4, 10, 20.0",
+            "13, 7, 45.5"})
+    public void shouldCalculateTriangleArea(double base, double height, String expected) {
         //given
-        Circle circle = new Circle(radius);
+        Triangle triangle = new Triangle(base, height);
 
         //when
-        String result = String.valueOf(circle.calculateArea());
+        String result = String.valueOf(triangle.calculateArea());
 
         //then
         assertThat(result, is(expected));
 
     }
+
 }

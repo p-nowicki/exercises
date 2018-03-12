@@ -9,19 +9,19 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 @RunWith(JUnitParamsRunner.class)
-public class CircleTest {
+public class SquareTest {
 
     @Test
-    @Parameters({"5, 78.5",
-            "7, 153.86",
-            "14, 615.44",
-            "10, 314.0"})
-    public void shouldCalculateCircleArea(int radius, String expected) {
+    @Parameters({"5, 25.0",
+            "7, 49.0",
+            "4, 16.0",
+            "10, 100.0"})
+    public void shouldCalculateSquareArea(double side, String expected) {
         //given
-        Circle circle = new Circle(radius);
+        Square square = new Square(side, side);
 
         //when
-        String result = String.valueOf(circle.calculateArea());
+        String result = String.valueOf(square.calculateArea());
 
         //then
         assertThat(result, is(expected));

@@ -16,12 +16,12 @@ public class SquareTest {
             "7, 49.0",
             "4, 16.0",
             "10, 100.0"})
-    public void shouldCalculateSquareArea(double side, String expected) {
+    public void shouldCalculateSquareArea(double sideA, double sideB, double expected) {
         //given
-        Square square = new Square(side, side);
+        Square square = new Square(sideA, sideB);
 
         //when
-        String result = String.valueOf(square.calculateArea());
+        double result = square.calculateArea();
 
         //then
         assertThat(result, is(expected));

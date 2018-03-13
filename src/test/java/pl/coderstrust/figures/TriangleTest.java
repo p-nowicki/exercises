@@ -16,12 +16,12 @@ public class TriangleTest {
             "14, 8, 56.0",
             "4, 10, 20.0",
             "13, 7, 45.5"})
-    public void shouldCalculateTriangleArea(double base, double height, String expected) {
+    public void shouldCalculateTriangleArea(double base, double height, double expected) {
         //given
         Triangle triangle = new Triangle(base, height);
 
         //when
-        String result = String.valueOf(triangle.calculateArea());
+        double result = triangle.calculateArea();
 
         //then
         assertThat(result, is(expected));

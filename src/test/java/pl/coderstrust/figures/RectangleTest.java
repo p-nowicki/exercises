@@ -16,12 +16,12 @@ public class RectangleTest {
             "7, 4, 28.0",
             "4, 10, 40.0",
             "10, 20, 200.0"})
-    public void shouldCalculateRectangleArea(double sideA, double sideB, String expected) {
+    public void shouldCalculateRectangleArea(double sideA, double sideB, double expected) {
         //given
         Rectangle rectangle = new Rectangle(sideA, sideB);
 
         //when
-        String result = String.valueOf(rectangle.calculateArea());
+        double result = rectangle.calculateArea();
 
         //then
         assertThat(result, is(expected));

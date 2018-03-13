@@ -16,12 +16,12 @@ public class CircleTest {
             "7, 153.86",
             "14, 615.44",
             "10, 314.0"})
-    public void shouldCalculateCircleArea(int radius, String expected) {
+    public void shouldCalculateCircleArea(int radius, double expected) {
         //given
         Circle circle = new Circle(radius);
 
         //when
-        String result = String.valueOf(circle.calculateArea());
+        double result = circle.calculateArea();
 
         //then
         assertThat(result, is(expected));

@@ -16,12 +16,12 @@ public class TrapezoidTest {
             "7, 4, 12, 66.0",
             "4, 10, 2, 14.0",
             "10, 20, 9, 135.0"})
-    public void shouldCalculateTrapezoidArea(double parallelSideA, double parallelSideB, double height, String expected) {
+    public void shouldCalculateTrapezoidArea(double parallelSideA, double parallelSideB, double height, double expected) {
         //given
         Trapezoid trapezoid = new Trapezoid(parallelSideA, parallelSideB, height);
 
         //when
-        String result = String.valueOf(trapezoid.calculateArea());
+        double result = trapezoid.calculateArea();
 
         //then
         assertThat(result, is(expected));

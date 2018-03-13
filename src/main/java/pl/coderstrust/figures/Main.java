@@ -1,6 +1,9 @@
 package pl.coderstrust.figures;
 
 public class Main {
-    //Circle circle = new Circle();
+
+    public static void main(String[] args) {
+
+    }
 
 }

@@ -16,9 +16,9 @@ public class SquareTest {
             "7, 49.0",
             "4, 16.0",
             "10, 100.0"})
-    public void shouldCalculateSquareArea(double sideA, double sideB, double expected) {
+    public void shouldCalculateSquareArea(double side, double expected) {
         //given
-        Square square = new Square(sideA, sideB);
+        Square square = new Square(side);
 
         //when
         double result = square.calculateArea();

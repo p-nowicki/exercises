@@ -2,6 +2,11 @@ package pl.coderstrust.numbers;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -19,6 +24,10 @@ public class FileProcessor {
         return lines;
     }
 
-    public void writeLinesToFile(List<String> resultLines, String resultFileName) {
+    public void writeLinesToFile(List<String> resultLines, String resultFileName) throws IOException {
+
+        Path file = Paths.get(resultFileName);
+        Files.write(file, resultLines, Charset.forName("UTF-8"));
+
     }
 }

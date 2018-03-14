@@ -2,7 +2,7 @@ package pl.coderstrust.sortings;
 
 import java.util.Arrays;
 
-public class CollectionsSort {
+public class CollectionsSort implements SortingMethod {
 
     public static void sortCollections(int[] array) {
         Arrays.sort(array);
@@ -13,5 +13,10 @@ public class CollectionsSort {
 
         sortCollections(array);
 
+    }
+
+    @Override
+    public int[] sort(int[] array) {
+        return new int[0];
     }
 }

@@ -1,6 +1,6 @@
 package pl.coderstrust.sortings;
 
-public class BubbleSort {
+public class BubbleSort implements SortingMethod {
 
     public static void sortBubble(int[] array) {
         boolean swap;
@@ -24,5 +24,10 @@ public class BubbleSort {
 
         sortBubble(array);
 
+    }
+
+    @Override
+    public int[] sort(int[] array) {
+        return new int[0];
     }
 }

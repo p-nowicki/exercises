@@ -1,6 +1,6 @@
 package pl.coderstrust.sortings;
 
-public class SelectionSort {
+public class SelectionSort implements SortingMethod {
 
     public static void selectSort(int[] array) {
         for (int i = 0; i < array.length; ++i) {
@@ -20,5 +20,10 @@ public class SelectionSort {
 
         selectSort(array);
 
+    }
+
+    @Override
+    public int[] sort(int[] array) {
+        return new int[0];
     }
 }

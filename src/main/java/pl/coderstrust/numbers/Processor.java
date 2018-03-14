@@ -19,8 +19,9 @@ public class Processor {
         List<String> resultLines = new ArrayList<>();
         for (String line : linesFromFile) {
             if (line.matches("[\\d\\s]+")) {
-                System.out.println(line);
-                //resultLines.add(line);
+                //System.out.println(line);
+
+                resultLines.add(numbersProcessor.processLine(line));
 
             }
         }

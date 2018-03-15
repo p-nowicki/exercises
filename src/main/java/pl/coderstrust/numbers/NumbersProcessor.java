@@ -6,7 +6,7 @@ public class NumbersProcessor {
         String[] splittedLine = line.split("\\s+");
         StringBuilder newLine = new StringBuilder();
         int sum = 0;
-        for (int i = 1; i < splittedLine.length - 1; ++i) {
+        for (int i = 0; i < splittedLine.length - 1; ++i) {
             newLine.append(splittedLine[i]);
             newLine.append(" + ");
             sum += Integer.parseInt(splittedLine[i]);

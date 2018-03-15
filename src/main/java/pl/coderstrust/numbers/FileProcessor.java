@@ -15,10 +15,13 @@ public class FileProcessor {
     public List<String> readLinesFromFile(String fileName) throws FileNotFoundException {
         List<String> lines = new ArrayList<>();
 
-        Scanner scanner = new Scanner(new File(fileName));
+        try (Scanner scanner = new Scanner(new File(fileName))) {
+            while (scanner.hasNextLine()) {
+                lines.add(scanner.nextLine());
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
 
-        while (scanner.hasNextLine()) {
-            lines.add(scanner.nextLine());
         }
 
         return lines;

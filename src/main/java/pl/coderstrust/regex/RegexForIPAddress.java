@@ -3,7 +3,7 @@ package pl.coderstrust.regex;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Regex {
+public class RegexForIPAddress {
 
     public static final String PATTERN_FOR_IPADDRESS = "(([0-1]?\\d{1,2}\\.)|(2[0-4]\\d\\.)|(25[0-5]\\.)){3}(([0-1]?\\d{1,2})|(2[0-4]\\d)|(25[0-5]))";
 

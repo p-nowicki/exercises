@@ -1,7 +1,15 @@
 package pl.coderstrust.regex;
 
 public class Regex {
+    
+    public static boolean isTheIPNumberValid (String ipAddress){
 
+        Pattern pattern = Pattern.compile("some regex pattern");
+        Matcher matcher = pattern.matcher(ipAddress);
+
+        return matcher.matches();
+    }
+    
     public static void main(String[] args) {
 
         /*

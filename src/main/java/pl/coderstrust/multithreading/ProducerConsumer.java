@@ -8,32 +8,31 @@ public class ProducerConsumer {
     private static BlockingQueue<Integer> commonQueue = new ArrayBlockingQueue<Integer>(10);
     int capacity = 10;
 
-    private void produce() throws InterruptedException {
+    private static void produce() throws InterruptedException {
 
-        int value = 0;
-        for (value = 0; value < 100000; value++) {
-            wait();
+        int value;
+        for (value = 1; value < 100000; value++) {
 
             System.out.println("Produced: " + value);
 
             commonQueue.put(value);
+            Thread.sleep(1400);
         }
 
     }
 
-    private void consume() throws InterruptedException {
+    private static void consume() throws InterruptedException {
 
-        while (commonQueue.size() == 0) {
+        while (true) {
 
-            wait();
             int value2 = commonQueue.take();
             System.out.println("Consumed: " + value2);
-            Thread.sleep(2000);
+            Thread.sleep(1300);
 
         }
     }
 
-    public static main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException {
 
         Thread t1 = new Thread(new Runnable() {
             public void run() {

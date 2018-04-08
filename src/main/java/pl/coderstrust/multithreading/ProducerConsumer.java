@@ -5,58 +5,47 @@ import java.util.concurrent.BlockingQueue;
 
 public class ProducerConsumer {
 
-    private static BlockingQueue<Integer> commonQueue = new ArrayBlockingQueue<Integer>(10);
-    int capacity = 10;
+    private static BlockingQueue<Integer> commonQueue = new ArrayBlockingQueue<>(10);
 
-    private static void produce() throws InterruptedException {
+    private static void produce() {
 
         int value;
         for (value = 1; value < 100000; value++) {
 
             System.out.println("Produced: " + value);
 
-            commonQueue.put(value);
-            Thread.sleep(1400);
+            try {
+                commonQueue.put(value);
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
         }
 
     }
 
-    private static void consume() throws InterruptedException {
+    private static void consume() {
 
         while (true) {
 
-            int value2 = commonQueue.take();
-            System.out.println("Consumed: " + value2);
-            Thread.sleep(1300);
+            int value2 = 0;
+            try {
+                value2 = commonQueue.take();
+                System.out.println("Consumed: " + value2);
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
         }
     }
 
     public static void main(String[] args) throws InterruptedException {
 
-        Thread t1 = new Thread(new Runnable() {
-            public void run() {
+        Thread t1 = new Thread(() -> produce());
 
-                try {
-                    produce();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-
-        });
-
-        Thread t2 = new Thread(new Runnable() {
-            public void run() {
-
-                try {
-                    consume();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-
-        });
+        Thread t2 = new Thread(() -> consume());
 
         t1.start();
         t2.start();
